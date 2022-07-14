@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "2db1ff27-10aa-4796-9212-afca1f2fc00a",
+		"name": "Sistema Votação",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21634465"
+	},
+	"item": [
+		{
+			"name": "salvar_associados",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Aurea\",\r\n    \"cpf\": \"186.775.969.48\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Local}}/associados/salvar",
+					"host": [
+						"{{Local}}"
+					],
+					"path": [
+						"associados",
+						"salvar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lista_associados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Local}}/associados/lista",
+					"host": [
+						"{{Local}}"
+					],
+					"path": [
+						"associados",
+						"lista"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "salvar_pauta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Teste1\",\r\n    \"descricao\": \"Teste1\",\r\n    \"pautaId\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Local}}/pauta/salvar",
+					"host": [
+						"{{Local}}"
+					],
+					"path": [
+						"pauta",
+						"salvar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lista_pauta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Local}}/pauta/5",
+					"host": [
+						"{{Local}}"
+					],
+					"path": [
+						"pauta",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sessão_de_votação",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"nome\": \"Teste1\",\r\n    \"pautaId\": \"1\",\r\n    \"sessaoId\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Local}}/sessao/iniciarSessao",
+					"host": [
+						"{{Local}}"
+					],
+					"path": [
+						"sessao",
+						"iniciarSessao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Votação",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"associadoId\": \"1\",\r\n    \"voto\": \"Sim\",\r\n    \"sessaoId\": \"1\",\r\n    \"pautaId\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Local}}/voto/votacao",
+					"host": [
+						"{{Local}}"
+					],
+					"path": [
+						"voto",
+						"votacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pauta_vencedora",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Local}}/voto/1",
+					"host": [
+						"{{Local}}"
+					],
+					"path": [
+						"voto",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Local",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
